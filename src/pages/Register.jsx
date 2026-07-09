@@ -10,7 +10,7 @@ export default function Register() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (name && email && password && password === confirmPassword) navigate('/configure');
+    if (name && email && password && password === confirmPassword) navigate('/dashboard');
   };
 
   return (

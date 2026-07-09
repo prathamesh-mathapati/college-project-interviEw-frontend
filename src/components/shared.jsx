@@ -39,11 +39,31 @@ export const activity = [
 ];
 
 export const interviewQuestions = {
-  Java: 'Explain the difference between a process and a thread.',
-  Python: 'How would you structure a Python service that needs to process background jobs?',
-  'Machine Learning': 'How do you detect and reduce overfitting in a machine learning model?',
-  'Web Development': 'Explain how you would design a responsive dashboard with reliable API states.',
-  HR: 'Tell me about a time you handled conflict inside a team.',
+  Java: [
+    { type: 'mcq', question: 'Which of the following is true about Java Garbage Collection?', options: ['It guarantees memory will not leak', 'It is deterministic', 'It reclaims memory from unreachable objects', 'You can force it to run using System.gc()'], correctAnswer: 'It reclaims memory from unreachable objects' },
+    { type: 'mcq', question: 'What is the main difference between an interface and an abstract class in Java 8+?', options: ['Interfaces can have state, abstract classes cannot', 'Abstract classes support multiple inheritance', 'Interfaces can have default methods', 'There is no difference'], correctAnswer: 'Interfaces can have default methods' },
+    { type: 'text', question: 'Describe the concept of polymorphism with a real-world example.' }
+  ],
+  Python: [
+    { type: 'mcq', question: 'What is the key difference between lists and tuples in Python?', options: ['Lists are immutable, tuples are mutable', 'Tuples are immutable, lists are mutable', 'Tuples can only store integers', 'Lists are faster than tuples for all operations'], correctAnswer: 'Tuples are immutable, lists are mutable' },
+    { type: 'mcq', question: 'Which keyword is used to create a generator in Python?', options: ['return', 'yield', 'generate', 'lambda'], correctAnswer: 'yield' },
+    { type: 'text', question: 'How would you structure a Python service that needs to process background jobs?' }
+  ],
+  'Machine Learning': [
+    { type: 'mcq', question: 'Which of the following helps to reduce overfitting in a model?', options: ['Increasing model complexity', 'Removing dropout layers', 'Adding L1/L2 regularization', 'Using a smaller training dataset'], correctAnswer: 'Adding L1/L2 regularization' },
+    { type: 'mcq', question: 'What is the primary goal of unsupervised learning?', options: ['Predicting a continuous target variable', 'Classifying data into labeled categories', 'Discovering hidden patterns in unlabeled data', 'Maximizing a reward function'], correctAnswer: 'Discovering hidden patterns in unlabeled data' },
+    { type: 'text', question: 'Explain the curse of dimensionality and how you deal with it.' }
+  ],
+  'Web Development': [
+    { type: 'mcq', question: 'Which storage mechanism is cleared when the page session ends?', options: ['LocalStorage', 'SessionStorage', 'Cookies', 'IndexedDB'], correctAnswer: 'SessionStorage' },
+    { type: 'mcq', question: 'In React, what is the purpose of the useEffect dependency array?', options: ['To declare variables used in the effect', 'To trigger the effect only when specified values change', 'To style the component', 'To pass props to child components'], correctAnswer: 'To trigger the effect only when specified values change' },
+    { type: 'text', question: 'Explain how you would design a responsive dashboard with reliable API states.' }
+  ],
+  HR: [
+    { type: 'mcq', question: 'When faced with a tight deadline, what is the best approach?', options: ['Panic and work randomly', 'Prioritize tasks and communicate with the team', 'Ignore the deadline and focus on perfection', 'Delegate everything to juniors without guidance'], correctAnswer: 'Prioritize tasks and communicate with the team' },
+    { type: 'mcq', question: 'How should you respond to constructive criticism?', options: ['Defend your actions aggressively', 'Ignore the feedback completely', 'Listen actively and identify areas for improvement', 'Blame others for the mistakes'], correctAnswer: 'Listen actively and identify areas for improvement' },
+    { type: 'text', question: 'Describe a situation where you failed and what you learned from it.' }
+  ],
 };
 
 export const feedback = {
@@ -313,10 +333,7 @@ export function Sidebar({ isOpen, onClose, activeItem, onSelect }) {
             </a>
           ))}
         </nav>
-        <div className="mt-auto rounded-lg border border-slate-200 bg-white/50 p-4">
-          <p className="text-sm font-semibold text-slate-900">Gemini Analyzer</p>
-          <p className="mt-1 text-xs leading-5 text-slate-500">Resume parsing and interview scoring are synced with your latest uploads.</p>
-        </div>
+
       </aside>
     </>
   );
