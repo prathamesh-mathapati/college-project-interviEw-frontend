@@ -8,7 +8,7 @@ export default function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (email && password) navigate('/configure');
+    if (email && password) navigate('/dashboard');
   };
 
   return (
